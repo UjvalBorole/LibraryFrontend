@@ -541,14 +541,15 @@ export default function BookDetail() {
                 </div>
               </div>
             </div>
+            </div>
 
             {isLoading ? (
               <p>Loading...</p>
             ) : RecommendedBooks && RecommendedBooks.length > 0 ? (
-              <section class="py-6  bg-slate-200 mt-4 ">
+              <section class="py-6  bg-slate-200 my-5 ">
                 <div class=" max-w-7xl sm:px-6 ">
                   <h2 class="font-manrope font-bold text-4xl text-black mb-8 max-lg:text-center">
-                    Recommended products list
+                    Recommended Books List
                   </h2>
                   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-2">
                     {RecommendedBooks.map((item) => (
@@ -562,7 +563,7 @@ export default function BookDetail() {
             ) : (
               <p>No books available</p>
             )}
-          </div>
+        
         </div>
       )}
       )

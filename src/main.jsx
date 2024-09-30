@@ -14,6 +14,8 @@ import AllBooks from './Pages/AllBooks/AllBooks.jsx';
 import BookDetail from './Pages/detail page/BookDetail.jsx';
 import Purchase from './Pages/Razorpay/Purchase.jsx';
 import Printable from './Pages/printable/Printable.jsx';
+import Order from './Pages/Orders/Order.jsx';
+import Like from './Pages/Likes/Like.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,9 +50,18 @@ const router = createBrowserRouter([
       {
         path: "/purchase/:id",
         element: <Purchase />
-      },{
+      }
+      ,{
         path: "/print/:id",
         element: <Printable />
+      }
+      ,{
+        path: "/order",
+        element: <Order />
+      },
+      {
+        path: "/likes",
+        element: <Like />
       },
     ]
   }

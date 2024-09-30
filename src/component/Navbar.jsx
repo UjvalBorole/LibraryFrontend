@@ -16,12 +16,6 @@ export const Navbar = () => {
   const userId = localStorage.getItem('userId');
 
 
-  // const config = {
-   
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //   }
-  // }
   const config = useMemo(() => {
     return {
       headers: {
@@ -58,7 +52,7 @@ export const Navbar = () => {
     navigate(`/allbook/0/${search}`)
   }
 
-console.log("user",user)
+// console.log("user",user)
   return (
     <>
       <header className="bg-white dark:bg-slate-300">
@@ -66,7 +60,7 @@ console.log("user",user)
           <a className="block text-teal-600 dark:text-teal-300" href="#">
             <span className="sr-only">Home</span>
            
-            <img src="./public/vite.png" className="h-8" alt="" srcset="" />
+            <img src="/vite.png" className="h-8" alt="" srcset="" />
           </a>
 
           <div className="flex flex-1 items-center justify-end md:justify-between">
@@ -84,19 +78,19 @@ console.log("user",user)
                 <li>
                   <Link
                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="#"
+                    to={'/order'}
                   >
-                    Orders
+                    Purchased
                   </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                    href="#"
+                    to={'/likes'}
                   >
-                    History
-                  </a>
+                    Likes
+                  </Link>
                 </li>
 
                 <li>

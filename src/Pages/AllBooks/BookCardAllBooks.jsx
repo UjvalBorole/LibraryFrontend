@@ -45,6 +45,7 @@ export default function BookCardAllBooks(props) {
   const value = ((likesLength * 5) / viewsLength);
   const stars = Array.from({ length: value });
   const user = props.userDto;
+  
   return (
     <div>
       <div class="bg-gray-50 shadow-md overflow-hidden rounded-lg cursor-pointer hover:-translate-y-2 transition-all relative">

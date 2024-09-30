@@ -62,14 +62,29 @@ export const Login = () => {
       }
     };
 
+    const handlegoogle = () =>{
+      window.location.href = 'http://localhost:9090/oauth2/authorization/google'
+      useEffect(() => {
+        const fetchUserInfo = async () => {
+          try {
+            const response = await axios.get('http://localhost:9090/api/user');
+            console.log("user data",response.data); // Contains user info (email, name, etc.)
+          } catch (error) {
+            console.error("Error fetching user info:", error);
+          }
+        };
+      
+        fetchUserInfo();
+      }, []);
+    }
   return (
 
-    <div className="flex w-full mt-5 item-center justify-center max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
+    <div className="flex w-full mt-20 item-center justify-center max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl">
     <div
-      className="hidden bg-cover lg:block lg:w-1/2"
+      className=" bg-cover lg:block lg:w-1/2"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80')",
+          "url('./public/login.png')",
       }}
     ></div>
 
@@ -77,7 +92,7 @@ export const Login = () => {
       <div className="flex justify-center mx-auto">
         <img
           className="w-auto h-7 sm:h-8"
-          src="https://merakiui.com/images/logo.svg"
+          src="./public/vite.png"
           alt=""
         />
       </div>
@@ -86,8 +101,8 @@ export const Login = () => {
         Welcome back!
       </p>
 
-      <a
-        href="#"
+      <div
+        onClick={handlegoogle}
         className="flex items-center justify-center mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
       >
         <div className="px-4 py-2">
@@ -114,7 +129,7 @@ export const Login = () => {
         <span className="w-5/6 px-4 py-3 font-bold text-center">
           Sign in with Google
         </span>
-      </a>
+      </div>
 
       <div className="flex items-center justify-between mt-4">
         <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
@@ -174,7 +189,7 @@ export const Login = () => {
       </div>
 
       <div className="mt-6">
-        <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+        <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-orange-500 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
           Sign In
         </button>
       </div>

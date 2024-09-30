@@ -138,7 +138,7 @@ export default function AllBooks() {
  
 
   return (
-    <div className="p-1 flex flex-wrap items-center justify-center">
+    <div className="p-1 flex flex-wrap items-center justify-center bg-slate-200">
       <div class="font-[sans-serif] py-4 mx-auto lg:max-w-7xl sm:max-w-full">
         <h2 class="text-4xl font-extrabold text-gray-800 mb-12"> {name}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
